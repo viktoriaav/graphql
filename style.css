@@ -1,0 +1,131 @@
+body{
+font-family: 'Inter', sans-serif;
+height: 900px;
+}
+#loginPopup {
+width: 100%;
+height: 100%;
+background-color: #ffffffac;
+z-index: 1000; 
+}
+
+.popup-content-login{
+position: absolute;
+top: 40%;
+left: 50%;
+transform: translate(-50%, -50%);
+background-color: #1F5B4B;
+padding: 20px;
+border-radius: 30px;
+width: 400px;
+height: 300px;
+}
+.form-name{
+margin-top: 10px;
+text-align: center;
+color: #FFEDD4;
+font-size: 24px;
+height: fit-content;
+padding-top: 20px;
+font-weight: 300;
+}
+.form {
+position: relative;
+width: 400px;
+height: 48px;
+margin-top: 30px;
+}
+
+.input-container {
+position: relative;
+margin-bottom: 20px;
+padding-top: 10px;
+}
+.form .content-name {
+width: 100%;
+height: 30px;
+padding-top: 15px;
+border: none;
+font-size: 16px;
+outline: none;
+background-color: transparent;
+color: #FFEDD4;
+}
+
+.form label {
+display: block;
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 100%;
+pointer-events: none;
+border-bottom: 1px solid #FFEDD4;
+overflow: hidden;
+color: #FFEDD4 ;
+}
+.content-name option{
+background-color: #1f5b4b9d;
+border: none;
+}
+
+.form .input-container select {
+height: 46px;
+}
+
+.form label:after {
+content: "";
+position: absolute;
+left: 0;
+bottom: -1px;
+width: 100%;
+height: 100%;
+border-bottom: 3px solid #FFEDD4;
+transform: translateX(-100%);
+transition: all 0.3s ease;
+}
+
+.label-name {
+position: absolute;
+bottom: 6px;
+left: 0;
+transition: all 0.3s ease;
+}
+.content-name:focus{
+color: #FFEDD4;
+}
+
+.content-name:focus + label .label-name,
+.content-name:valid + label .label-name {
+transform: translateY(-150%);
+font-size: 14px;
+color: #FFEDD4;
+caret-color: #FFEDD4;
+}
+
+.form input:focus + label:after,
+.form input:valid + label:after,
+.form select:focus + label:after,
+.form select:valid + label:after {
+transform: translateX(0);
+}
+
+.submit{  
+display: flex;
+justify-content: center;
+padding-top: 30px;
+}
+.submit input{
+margin: 0;
+padding-bottom: 3px;
+border: none;
+border-bottom: 2px solid #FFEDD4;
+cursor: pointer;
+color: #FFEDD4;
+font-size: 24px;
+font-weight: 400;
+height: fit-content;
+width: fit-content;
+outline: none;
+background-color: transparent;
+}
