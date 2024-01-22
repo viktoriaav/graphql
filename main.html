@@ -11,28 +11,64 @@
     <title>GraphQL</title>
 </head>
 <body>
-    <div class="popup">
-        <div id="loginPopup">
-            <div class="popup-content-login">
-                <h2 class="form-name">Login with 01 credentials</h2>
-                <form method="POST" class="form">
-                    <div class="input-container">
-                        <input class="content-name" type="text" id="identifier" name="identifier" required>
-                        <label for="identifier"><span class="label-name">Username or email</span></label>
-                    </div>
-                    <div class="input-container">
-                        <input class="content-name" type="password" id="password" name="password" required>
-                        <label for="password"><span class="label-name">Password</span></label>
-                    </div>
-                    <div class="submit">
-                        <input type="submit" value="Login" >
-                    </div>
-                </form>
-            </div>
-        </div>    
-    </div>
     <div class="app">
+        <div class="popup" id="login-container">
+            <div id="loginPopup">
+                <div class="popup-content-login">
+                    <h2 class="form-name">Login with 01 credentials</h2>
+                    <form method="POST" class="form" id="login-form">
+                        <div class="input-container">
+                            <input class="content-name" type="text" id="identifier" name="identifier" required>
+                            <label for="identifier"><span class="label-name">Username or email</span></label>
+                        </div>
+                        <div class="input-container">
+                            <input class="content-name" type="password" id="password" name="password" required>
+                            <label for="password"><span class="label-name">Password</span></label>
+                        </div>
+                        <div class="submit">
+                            <input type="submit" id="submit" value="Login" >
+                        </div>
+                    </form>
+                </div>
+            </div>    
+        </div>
+
+        <div class="error" id="error" style="display: none;">
+            <div class="back-home-wrap" id="back-home">
+                <div class="back-home-error">
+                    <a onclick="error()" class="back-home-btn" id="back-home-btn">Go back</a>
+                </div>
+            </div>
+            <div class="error-page">
+                <div class="error-message" id="error-message"></div>
+            </div>
+        </div>
+
+        <div class="logout" id="logout" style="display: none;">
+            <button id="logout-btn">Logout</button>
+        </div>
         
+        <!-- GRAPHS -->
+        <div class="all-graphs" style="display: none;">
+            <!-- Current XP and personal info -->
+            <div class="graph" id="currentXP">
+                <!-- Probably also some personal info -->
+                <div class="text" id="username"></div>
+                <div class="text" id="email"></div>
+                <div class="text" id="country"></div>
+                <div class="text" id="level"></div>
+                <div class="text" id="totalxp"></div>
+            </div>
+            <!-- Skills Piechart -->
+            <div class="graph" id="pie">
+
+            </div>
+            <!-- XP progression -->
+            <div class="graph" id="xp-progression">
+
+            </div>
+        </div>
     </div>
+    <script src="index.js"></script>
 </body>
 </html>

@@ -1,131 +1,205 @@
 body{
-font-family: 'Inter', sans-serif;
-height: 900px;
+    font-family: 'Inter', sans-serif;
+    height: 900px;
 }
 #loginPopup {
-width: 100%;
-height: 100%;
-background-color: #ffffffac;
-z-index: 1000; 
+    width: 100%;
+    height: 100%;
+    background-color: #ffffffac;
+    z-index: 1000; 
 }
 
 .popup-content-login{
-position: absolute;
-top: 40%;
-left: 50%;
-transform: translate(-50%, -50%);
-background-color: #1F5B4B;
-padding: 20px;
-border-radius: 30px;
-width: 400px;
-height: 300px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1F5B4B;
+    padding: 20px;
+    border-radius: 30px;
+    width: 400px;
+    height: 330px;
 }
 .form-name{
-margin-top: 10px;
-text-align: center;
-color: #FFEDD4;
-font-size: 24px;
-height: fit-content;
-padding-top: 20px;
-font-weight: 300;
+    margin-top: 10px;
+    text-align: center;
+    color: #FFEDD4;
+    font-size: 24px;
+    height: fit-content;
+    padding-top: 20px;
+    font-weight: 300;
 }
 .form {
-position: relative;
-width: 400px;
-height: 48px;
-margin-top: 30px;
+    position: relative;
+    width: 400px;
+    height: 48px;
+    margin-top: 30px;
 }
 
 .input-container {
-position: relative;
-margin-bottom: 20px;
-padding-top: 10px;
+    position: relative;
+    margin-bottom: 20px;
+    padding-top: 10px;
 }
 .form .content-name {
-width: 100%;
-height: 30px;
-padding-top: 15px;
-border: none;
-font-size: 16px;
-outline: none;
-background-color: transparent;
-color: #FFEDD4;
+    width: 100%;
+    height: 30px;
+    padding-top: 15px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    background-color: transparent;
+    color: #FFEDD4;
 }
 
 .form label {
-display: block;
-position: absolute;
-bottom: 0;
-left: 0;
-width: 100%;
-height: 100%;
-pointer-events: none;
-border-bottom: 1px solid #FFEDD4;
-overflow: hidden;
-color: #FFEDD4 ;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid #FFEDD4;
+    overflow: hidden;
+    color: #FFEDD4 ;
 }
 .content-name option{
-background-color: #1f5b4b9d;
-border: none;
+    background-color: #1f5b4b9d;
+    border: none;
 }
 
 .form .input-container select {
-height: 46px;
+    height: 46px;
 }
 
 .form label:after {
-content: "";
-position: absolute;
-left: 0;
-bottom: -1px;
-width: 100%;
-height: 100%;
-border-bottom: 3px solid #FFEDD4;
-transform: translateX(-100%);
-transition: all 0.3s ease;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 3px solid #FFEDD4;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
 }
 
 .label-name {
-position: absolute;
-bottom: 6px;
-left: 0;
-transition: all 0.3s ease;
+    position: absolute;
+    bottom: 6px;
+    left: 0;
+    transition: all 0.3s ease;
 }
 .content-name:focus{
-color: #FFEDD4;
+    color: #FFEDD4;
 }
 
 .content-name:focus + label .label-name,
 .content-name:valid + label .label-name {
-transform: translateY(-150%);
-font-size: 14px;
-color: #FFEDD4;
-caret-color: #FFEDD4;
+    transform: translateY(-150%);
+    font-size: 14px;
+    color: #FFEDD4;
+    caret-color: #FFEDD4;
 }
 
 .form input:focus + label:after,
 .form input:valid + label:after,
 .form select:focus + label:after,
 .form select:valid + label:after {
-transform: translateX(0);
+    transform: translateX(0);
 }
 
 .submit{  
-display: flex;
-justify-content: center;
-padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
 }
 .submit input{
-margin: 0;
-padding-bottom: 3px;
-border: none;
-border-bottom: 2px solid #FFEDD4;
-cursor: pointer;
-color: #FFEDD4;
-font-size: 24px;
-font-weight: 400;
-height: fit-content;
-width: fit-content;
-outline: none;
-background-color: transparent;
+    margin: 0;
+    padding-bottom: 3px;
+    border: none;
+    border-bottom: 2px solid #FFEDD4;
+    cursor: pointer;
+    color: #FFEDD4;
+    font-size: 24px;
+    font-weight: 400;
+    height: fit-content;
+    width: fit-content;
+    outline: none;
+    background-color: transparent;
+}
+
+.error{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+    
+}
+.error-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 500px;
+    background-color: #833741;
+    border-radius: 10px;
+}
+.error-message{
+    font-size: 34px;
+    color: white;
+}
+.back-home-error{
+    display: flex;
+    align-items: center;
+    color: black;
+    height: 30px;
+    margin-top: 50px;
+    width: 650px;
+    text-align: left;
+    text-decoration: underline;
+    text-underline-position: under;
+    cursor: pointer;
+    margin-bottom: 50px;
+}
+.all-graphs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffffac;
+}
+
+.graph {
+    background-color: #1F5B4B;
+    padding: 20px;
+    border-radius: 30px;
+    width: 400px;
+    margin: 20px;
+}
+.text {
+    background-color: #fff7b3; /* Pastel yellow background */
+    color: #000; /* Black text */
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.logout{
+    display: flex;
+    justify-content: flex-end;
+    width: 1200px;
+    margin-top: 20px;
+}
+
+#logout-btn{
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    text-decoration: underline;
+    text-underline-position: under;
+    cursor: pointer;
 }
