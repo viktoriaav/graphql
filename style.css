@@ -203,3 +203,41 @@ body{
     text-underline-position: under;
     cursor: pointer;
 }
+
+/* Header */
+
+.header-container{
+    background: #19535F;
+}
+
+.header{
+    width: 1280px;
+    display: flex;
+    justify-content: space-between;   
+    margin: 0 auto;
+}
+.sign-out img{
+    height: 24px;
+    width: 24px;
+}
+
+.sign-out{
+    display: flex;
+    align-items: center;
+}
+
+/* Text info */
+
+.text-info{
+    width: 1200px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.greeting{
+    background-color: #809BCE;
+    width: 183px;
+    height: fit-content;
+    font-size: 24px;
+    padding: 10px;
+}

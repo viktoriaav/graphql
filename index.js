@@ -1,6 +1,6 @@
 const errorContainer = document.getElementById("error");
 const loginContainer = document.getElementById("login-container");
-const graphsContainer = document.querySelector(".all-graphs");
+const graphsContainer = document.getElementById("app");
 
 const error = (errorMessage) => {
     // Set error message
@@ -19,7 +19,7 @@ const success = () => {
     // Hide error and login, show graphs
     errorContainer.style.display = "none";
     loginContainer.style.display = "none";
-    graphsContainer.style.display = "flex";
+    graphsContainer.style.display = "block";
 };
 
 const closeError = () => {
@@ -50,7 +50,8 @@ loginForm.addEventListener("submit", async (e) => {
             const token = await res.json();
             localStorage.setItem("jwt", token);
             success();
-            showLogoutButton(); // Call this function to show the logout button
+            const logoutButton = document.getElementById("logout");
+            logoutButton.addEventListener("click", logout)
         } else {
             const errortext = await res.json();
             error(errortext.error);
@@ -61,16 +62,6 @@ loginForm.addEventListener("submit", async (e) => {
     }
 });
 
-// Function to show the existing logout button
-function showLogoutButton() {
-    const logoutButton = document.getElementById("logout");
-    if (logoutButton) {
-        logoutButton.style.display = "flex"; // Set the display property to "inline-block" to make it visible
-        logoutButton.addEventListener("click", logout);
-    } else {
-        console.error("Logout button not found");
-    }
-}
 
 // Function to handle logout
 function logout() {
@@ -88,3 +79,5 @@ function logout() {
         loginForm.reset();
     }
 }
+
+

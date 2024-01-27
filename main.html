@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="icon" href="favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="reset.css" type="text/css">
     <link rel="stylesheet"  href="style.css" type="text/css">
     <link rel="preconnect" href="https:fonts.googleapis.com">
     <link rel="preconnect" href="https:fonts.gstatic.com" crossorigin>
@@ -11,61 +12,73 @@
     <title>GraphQL</title>
 </head>
 <body>
-    <div class="app">
-        <div class="popup" id="login-container">
-            <div id="loginPopup">
-                <div class="popup-content-login">
-                    <h2 class="form-name">Login with 01 credentials</h2>
-                    <form method="POST" class="form" id="login-form">
-                        <div class="input-container">
-                            <input class="content-name" type="text" id="identifier" name="identifier" required>
-                            <label for="identifier"><span class="label-name">Username or email</span></label>
-                        </div>
-                        <div class="input-container">
-                            <input class="content-name" type="password" id="password" name="password" required>
-                            <label for="password"><span class="label-name">Password</span></label>
-                        </div>
-                        <div class="submit">
-                            <input type="submit" id="submit" value="Login" >
-                        </div>
-                    </form>
-                </div>
-            </div>    
-        </div>
-
-        <div class="error" id="error" style="display: none;">
-            <div class="back-home-wrap" id="back-home">
-                <div class="back-home-error">
-                    <a onclick="error()" class="back-home-btn" id="back-home-btn">Go back</a>
-                </div>
+    <div class="popup" id="login-container" style="display: none;">
+        <div id="loginPopup">
+            <div class="popup-content-login">
+                <h2 class="form-name">Login with 01 credentials</h2>
+                <form method="POST" class="form" id="login-form">
+                    <div class="input-container">
+                        <input class="content-name" type="text" id="identifier" name="identifier" required>
+                        <label for="identifier"><span class="label-name">Username or email</span></label>
+                    </div>
+                    <div class="input-container">
+                        <input class="content-name" type="password" id="password" name="password" required>
+                        <label for="password"><span class="label-name">Password</span></label>
+                    </div>
+                    <div class="submit">
+                        <input type="submit" id="submit" value="Login" >
+                    </div>
+                </form>
             </div>
-            <div class="error-page">
-                <div class="error-message" id="error-message"></div>
+        </div>    
+    </div>
+
+    <div class="error" id="error" style="display: none;">
+        <div class="back-home-wrap" id="back-home">
+            <div class="back-home-error">
+                <a onclick="error()" class="back-home-btn" id="back-home-btn">Go back</a>
             </div>
         </div>
+        <div class="error-page">
+            <div class="error-message" id="error-message"></div>
+        </div>
+    </div>
 
-        <div class="logout" id="logout" style="display: none;">
-            <button id="logout-btn">Logout</button>
+    
+    <div class="app" id="app">
+        <div class="header-container">
+            <div class="header">
+                <div class="logo"><img src="logo.png"></div>
+                <div class="sign-out" id="logout"><img src="sign-out.png"></div>
+            </div>
         </div>
         
         <!-- GRAPHS -->
-        <div class="all-graphs" style="display: none;">
-            <!-- Current XP and personal info -->
-            <div class="graph" id="currentXP">
-                <!-- Probably also some personal info -->
-                <div class="text" id="username"></div>
-                <div class="text" id="email"></div>
-                <div class="text" id="country"></div>
-                <div class="text" id="level"></div>
-                <div class="text" id="totalxp"></div>
+        <div class="all-graphs">
+            <div class="text-info">
+                <div class="greeting">Hello, username</div>
+                <div class="current-lvl">
+                    <div class="level-text">
+                        <p>Your current level:</p>
+                    </div>
+                    <div class="level" id="level">30</div>
+                    <div class="total-xp" id="total-xp">Current XP: 293k</div>
+                </div>
+                <div class="audit">
+                    <div class="audit-done">Done: 3.22 MB</div>
+                    <div class="audit-done">Received: 2.17 MB</div>
+                    <div class="audit-done">Ratio: 1.5</div>
+                </div>
             </div>
-            <!-- Skills Piechart -->
-            <div class="graph" id="pie">
-
-            </div>
-            <!-- XP progression -->
-            <div class="graph" id="xp-progression">
-
+            <div class="grahps">
+                <!-- XP progression -->
+                <div class="graph" id="xp-progression">
+                    
+                </div>
+                <!-- Skills Piechart -->
+                <div class="graph" id="pie">
+                    
+                </div>
             </div>
         </div>
     </div>
