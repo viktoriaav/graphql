@@ -173,21 +173,6 @@ body{
     align-items: center;
 }
 
-.logout{
-    display: flex;
-    justify-content: flex-end;
-    width: 1200px;
-    margin-top: 20px;
-}
-
-#logout-btn{
-    background-color: transparent;
-    border: none;
-    font-size: 18px;
-    text-decoration: underline;
-    text-underline-position: under;
-    cursor: pointer;
-}
 
 /* Header */
 
@@ -209,6 +194,7 @@ body{
 .sign-out{
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 /* Text info */
@@ -243,8 +229,7 @@ body{
     font-size: 24px;
 }
 
-.audit-received,
-.audit-ratio{
+.text{
     color: white;
 }
 /* Graphs */
@@ -263,7 +248,36 @@ body{
 }
 
 .xp-progress{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     background-color: #7B2D26;
-    width: 500px;
+    width: fit-content;
     height: 350px;
 }
+
+.xp{
+    font-size: 16px;
+}
+.pie-chart{
+    font-size: 20px;
+}
+
+.skills{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: fit-content;
+    height: 350px;
+    gap: 15px;
+}
+.pie{
+    height: 300px;
+    width: fit-content;
+
+}
+#pie{
+    height: 500px;
+    width: fit-content;
+}
+
