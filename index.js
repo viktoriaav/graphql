@@ -287,52 +287,57 @@ function makePieSlice(projects, xp) { // function to create pie chart for total 
       const pie = document.getElementById("pie");
       const pieCenterX = 150; // X-coordinate of the pie center
       const pieCenterY = 150; // Y-coordinate of the pie center
+      const uniqueProjects = new Set(); // Set to store unique project names
   
       projects.forEach(element => {
-          let slicesize = (element.amount / xp) * 360;
-          let sliceradius = (element.amount / xp) * 100 * circumfence / 100;
-          let info = document.getElementById("info");
-          var circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-          circle.setAttribute("class", "circle");
-          circle.setAttribute("r", 75);
-          circle.setAttribute("cx", pieCenterX);
-          circle.setAttribute("cy", pieCenterY);
-          circle.setAttribute("fill", "transparent");
-          circle.setAttribute("stroke", colors[colorcount]);
-          circle.setAttribute("stroke-width", 150);
-          circle.setAttribute("stroke-dasharray", `${sliceradius} ${2 * Math.PI * 75}`);
-          circle.setAttribute("transform", `rotate(${start} ${pieCenterX} ${pieCenterY})`);
-          pie.append(circle);
+          if (element.amount > 0 && !uniqueProjects.has(element.object.name)) {
+              let slicesize = (element.amount / xp) * 360;
+              let sliceradius = (element.amount / xp) * 100 * circumfence / 100;
+              let info = document.getElementById("info");
+              var circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+              circle.setAttribute("class", "circle");
+              circle.setAttribute("r", 75);
+              circle.setAttribute("cx", pieCenterX);
+              circle.setAttribute("cy", pieCenterY);
+              circle.setAttribute("fill", "transparent");
+              circle.setAttribute("stroke", colors[colorcount]);
+              circle.setAttribute("stroke-width", 150);
+              circle.setAttribute("stroke-dasharray", `${sliceradius} ${2 * Math.PI * 75}`);
+              circle.setAttribute("transform", `rotate(${start} ${pieCenterX} ${pieCenterY})`);
+              pie.append(circle);
   
-          circle.addEventListener("mousemove", event => {
-              info.style.visibility = "visible";
-              info.style.position = "absolute"
-              info.style.zIndex = "1"
-              info.style.color = "#fff"
-              info.style.backgroundColor = "black"
-
-              // Calculate the angle of the slice relative to the starting point
-              let angle = start + slicesize / 2;
+              uniqueProjects.add(element.object.name); // Add project name to the set
   
-              // Convert angle to radians
-              let radians = (angle * Math.PI) / 180;
+              circle.addEventListener("mousemove", event => {
+                  info.style.visibility = "visible";
+                  info.style.position = "absolute"
+                  info.style.zIndex = "1"
+                  info.style.color = "#fff"
+                  info.style.backgroundColor = "black"
   
-              // Calculate the position of the info box based on the angle
-              let offsetX = 50 * Math.cos(radians); // Adjust this value as needed
-              let offsetY = 50 * Math.sin(radians); // Adjust this value as needed
+                  // Calculate the angle of the slice relative to the starting point
+                  let angle = start + slicesize / 2;
   
-              var mouseX = event.clientX;
-              var mouseY = event.clientY;
-              info.style.left = mouseX + window.scrollX + offsetX + "px";
-              info.style.top = mouseY + window.scrollY + offsetY + "px";
-              info.innerHTML = `${element.object.name} - ${element.amount / 1000}XP (${(element.amount / xp * 100).toFixed(2)}%)`;
-          });
+                  // Convert angle to radians
+                  let radians = (angle * Math.PI) / 180;
   
-          circle.addEventListener("mouseout", function () {
-              info.style.visibility = "hidden";
-          });
+                  // Calculate the position of the info box based on the angle
+                  let offsetX = 50 * Math.cos(radians); // Adjust this value as needed
+                  let offsetY = 50 * Math.sin(radians); // Adjust this value as needed
   
-          start += slicesize;
-          colorcount == colors.length - 1 ? colorcount = 0 : colorcount++;
+                  var mouseX = event.clientX;
+                  var mouseY = event.clientY;
+                  info.style.left = mouseX + window.scrollX + offsetX + "px";
+                  info.style.top = mouseY + window.scrollY + offsetY + "px";
+                  info.innerHTML = `${element.object.name} - ${element.amount / 1000}XP (${(element.amount / xp * 100).toFixed(2)}%)`;
+              });
+  
+              circle.addEventListener("mouseout", function () {
+                  info.style.visibility = "hidden";
+              });
+  
+              start += slicesize;
+              colorcount == colors.length - 1 ? colorcount = 0 : colorcount++;
+          }
       });
   }
