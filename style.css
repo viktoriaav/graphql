@@ -1,6 +1,8 @@
 body{
     font-family: 'Inter', sans-serif;
     height: 900px;
+    background-color: #D7C9AA;
+    height: 1000px;
 }
 #loginPopup {
     width: 100%;
@@ -14,7 +16,7 @@ body{
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #1F5B4B;
+    background-color: #19535F;
     padding: 20px;
     border-radius: 30px;
     width: 400px;
@@ -168,24 +170,7 @@ body{
 .all-graphs {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background-color: #ffffffac;
-}
-
-.graph {
-    background-color: #1F5B4B;
-    padding: 20px;
-    border-radius: 30px;
-    width: 400px;
-    margin: 20px;
-}
-.text {
-    background-color: #fff7b3; /* Pastel yellow background */
-    color: #000; /* Black text */
-    padding: 10px;
-    margin: 10px;
-    border-radius: 10px;
 }
 
 .logout{
@@ -232,6 +217,7 @@ body{
     width: 1200px;
     display: flex;
     justify-content: space-around;
+    margin-top: 30px;
 }
 
 .greeting{
@@ -240,4 +226,44 @@ body{
     height: fit-content;
     font-size: 24px;
     padding: 10px;
+}
+
+.current-lvl,
+.audit{
+    width: 281px;
+    height: 100px;
+    background-color: #7B2D26;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.level{
+    font-size: 24px;
+}
+
+.audit-received,
+.audit-ratio{
+    color: white;
+}
+/* Graphs */
+.graphs{
+    display: flex;
+    margin-top: 50px;
+    width: 1200px;
+    justify-content: space-between;
+}
+
+.graph {
+    padding: 20px;
+    width: 400px;
+    height: 250px;
+    margin: 20px;
+}
+
+.xp-progress{
+    background-color: #7B2D26;
+    width: 500px;
+    height: 350px;
 }

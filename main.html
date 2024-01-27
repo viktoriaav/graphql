@@ -12,7 +12,7 @@
     <title>GraphQL</title>
 </head>
 <body>
-    <div class="popup" id="login-container" style="display: none;">
+    <div class="popup" id="login-container">
         <div id="loginPopup">
             <div class="popup-content-login">
                 <h2 class="form-name">Login with 01 credentials</h2>
@@ -45,7 +45,7 @@
     </div>
 
     
-    <div class="app" id="app">
+    <div class="app" id="app"  style="display: none;">
         <div class="header-container">
             <div class="header">
                 <div class="logo"><img src="logo.png"></div>
@@ -65,15 +65,16 @@
                     <div class="total-xp" id="total-xp">Current XP: 293k</div>
                 </div>
                 <div class="audit">
-                    <div class="audit-done">Done: 3.22 MB</div>
-                    <div class="audit-done">Received: 2.17 MB</div>
-                    <div class="audit-done">Ratio: 1.5</div>
+                    <div class="audit-done" id="done">Done: 3.22 MB</div>
+                    <div class="audit-received" id="received">Received: 2.17 MB</div>
+                    <div class="audit-ratio" id="ratio">Ratio: 1.5</div>
                 </div>
             </div>
-            <div class="grahps">
+            <div class="graphs">
                 <!-- XP progression -->
-                <div class="graph" id="xp-progression">
-                    
+                <div class="graph xp-progress">
+                    <p class="xp">XP Progress</p>
+                    <div class="xp-progression"></div>
                 </div>
                 <!-- Skills Piechart -->
                 <div class="graph" id="pie">
