@@ -69,7 +69,7 @@ function logout() {
     localStorage.removeItem("jwt"); // Remove the token from local storage
     loginContainer.style.display = "flex"; // Show the login container
     graphsContainer.style.display = "none"; // Hide the graphs container
-    const logoutButton = document.getElementById("logout");
+
     if (logoutButton) {
         logoutButton.style.display = "none";; // Remove the logout button
     }
