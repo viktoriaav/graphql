@@ -8,13 +8,11 @@ Login with 01 credentials to see your:
 - XP progress by time
 
 ## Usage
-```
-Go to https://viktoriaav.github.io/
-```
-or
-```
+
+Go to https://viktoriaav.github.io/ \
+or \
 Open index.html in your browser
-```
+
 
 ## Audit
 
