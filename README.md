@@ -9,7 +9,7 @@ Login with 01 credentials to see your:
 
 ## Usage
 
-Go to https://viktoriaav.github.io/ \
+Go to https://01_stats/ \
 or \
 Open index.html in your browser
 
