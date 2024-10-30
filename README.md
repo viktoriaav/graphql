@@ -9,7 +9,7 @@ Login with 01 credentials to see your:
 
 ## Usage
 
-Go to https://01_stats/ \
+Go to https://01_stats.io/ \
 or \
 Open index.html in your browser
 
